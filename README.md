@@ -1,0 +1,2 @@
+# Mind-Genix
+Student Enrollment
