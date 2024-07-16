@@ -1,0 +1,396 @@
+﻿@{
+    ViewBag.Title = "Student Registration";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+@model WebApp.Models.student_information
+<!DOCTYPE html>
+<html>
+<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    @using (@Html.BeginForm("StudRegistration", "Home", FormMethod.Post, new { @id = "studentform" }))
+    {
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="studentRegister">Student Register ID :<span style="color:red;">*</span></label><br>
+                    @*<input type="text" id="firstname" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.register_id, new { @style = "background-color:white;" })
+                    @Html.HiddenFor(x => x.ostudentRegister.register_id)
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Register Date :<span style="color:red;">*</span></label><br>
+                    @*<input type="text" id="lastname" style="background-color: white;" name="lname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.register_date, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Name : <span style="color:red;">*</span></label><br>
+                    <!-- <input type="date" id="fname" name="fname"> -->
+                    @*<input type="text" id="dateofbirth" style="background-color: white;" name="fname" placeholder="MM/DD/YYYY">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.student_name, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Gender :<span style="color:red;">*</span></label><br>
+                    @*<input type="number" id="mobilenumber" style="background-color: white;" name="fname" placeholder="10 digits only">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.gender, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Date Of Birth :<span style="color:red;">*</span></label><br>
+                    @*<input type="text" id="emailid" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.dob, new { @style = "background-color:white;", @type = "Date" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Age :</label><br>
+                    @*<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.age, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Blood Group :<span style="color:red;">*</span></label><br>
+                    @*<input type="text" id="firstname" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.blood_groop, new { @style = "background-color:white;" })
+      
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Mother Tongue :</label><br>
+                    @*<input type="text" id="lastname" style="background-color: white;" name="lname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.mother_tongue, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Contact Number : <span style="color:red;">*</span></label><br>
+                    <!-- <input type="date" id="fname" name="fname"> -->
+                    @*<input type="text" id="dateofbirth" style="background-color: white;" name="fname" placeholder="MM/DD/YYYY">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.student_contact, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Aadhaar Number :</label><br>
+                    @*<input type="number" id="mobilenumber" style="background-color: white;" name="fname" placeholder="10 digits only">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.aadhar_number, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Mail ID :<span style="color:red;">*</span></label><br>
+                    @*<input type="text" id="emailid" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.student_mailid, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Father Name :</label><br>
+                    @*<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.father_name, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Guardian Name :</label><br>
+                    @*<input type="text" id="firstname" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.guardian_name, new { @style = "background-color:white;" })
+                    
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Father Contact Number :</label><br>
+                    @*<input type="text" id="lastname" style="background-color: white;" name="lname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.father_contact, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Guardian Contact : </label><br>
+                    <!-- <input type="date" id="fname" name="fname"> -->
+                    @*<input type="text" id="dateofbirth" style="background-color: white;" name="fname" placeholder="MM/DD/YYYY">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.guardian_contact, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Father Mail ID :</label><br>
+                    @*<input type="number" id="mobilenumber" style="background-color: white;" name="fname" placeholder="10 digits only">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.father_mailid, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Guardian Mail ID :</label><br>
+                    @*<input type="text" id="emailid" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.guardian_mailid, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Father Occupation :</label><br>
+                    @*<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.father_occupation, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Mother Name :</label><br>
+                    @*<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.mother_name, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Mother Contact Number :</label><br>
+                    @*<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.mother_contact, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Mother Mail ID :</label><br>
+                    @*<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.mother_mailid, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Mother Occupation :</label><br>
+                    @*<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.mother_occupation, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Annual Income :</label><br>
+                    @*@<input type="text" id="emailid" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.annual_income, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Address :<span style="color:red;">*</span></label><br>
+                    @*@<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.residential_address, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> City :<span style="color:red;">*</span></label><br>
+                    @*@<input type="text" id="firstname" style="background-color: white;" name="fname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.city, new { @style = "background-color:white;" })
+
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> State :<span style="color:red;">*</span></label><br>
+                    @*@<input type="text" id="lastname" style="background-color: white;" name="lname">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.state, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Nationality: <span style="color:red;">*</span></label><br>
+                    <!-- <input type="date" id="fname" name="fname"> -->
+                    @*@<input type="text" id="dateofbirth" style="background-color: white;" name="fname" placeholder="MM/DD/YYYY">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.nationality, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Scholarship(Y/N): <span style="color:red;">*</span></label><br>
+                    <!-- <input type="date" id="fname" name="fname"> -->
+                    @*@<input type="text" id="dateofbirth" style="background-color: white;" name="fname" placeholder="MM/DD/YYYY">*@
+                    @Html.TextBoxFor(x => x.ostudentRegister.scholarship, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                     <label for="studentRegister"> Hosteller(Y/N) :<span style="color:red;">*</span></label><br>
+                     @*@<input type="number" id="mobilenumber" style="background-color: white;" name="fname" placeholder="10 digits only">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.hosteller, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Religion :</label><br>
+                     @*@<input type="text" id="emailid" style="background-color: white;" name="fname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.religion, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                     <label for="studentRegister"> Student Caste :</label><br>
+                     @*@<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.caste, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                     <label for="studentRegister"> Student Board :<span style="color:red;">*</span></label><br>
+                     @*@<input type="text" id="firstname" style="background-color: white;" name="fname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.board, new { @style = "background-color:white;" })
+
+                </div>
+                <div class="col-sm-3">
+                     <label for="studentRegister"> Medium_Language :<span style="color:red;">*</span></label><br>
+                     @*@<input type="text" id="lastname" style="background-color: white;" name="lname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.medium, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                     <label for="studentRegister"> 10th Passout Year : <span style="color:red;">*</span></label><br>
+                     <!-- <input type="date" id="fname" name="fname"> -->
+                     @*@<input type="text" id="dateofbirth" style="background-color: white;" name="fname" placeholder="MM/DD/YYYY">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.sslc_passout_year, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> 10th Percentage :<span style="color:red;">*</span></label><br>
+                     @*@<input type="number" id="mobilenumber" style="background-color: white;" name="fname" placeholder="10 digits only">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.sslc_percent, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                     <label for="studentRegister"> 12th Passout Year :<span style="color:red;">*</span></label><br>
+                     @*@<input type="text" id="emailid" style="background-color: white;" name="fname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.hsc_passout_year, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> 12th Percentage :<span style="color:red;">*</span></label><br>
+                     @*@<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.hsc_percent, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Student Degree :<span style="color:red;">*</span></label><br>
+                     @*@<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.degree, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                     <label for="studentRegister"> Student Branch :<span style="color:red;">*</span></label><br>
+                     @*@<input type="text" id="firstname" style="background-color: white;" name="fname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.branch, new { @style = "background-color:white;" })
+
+                </div>
+                <div class="col-sm-3">
+                     <label for="studentRegister"> Student Quota :<span style="color:red;">*</span></label><br>
+                     @*@<input type="text" id="lastname" style="background-color: white;" name="lname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.quota, new { @style = "background-color:white;" })
+                </div>
+                <div class="col-sm-3">
+                    <label for="studentRegister"> Active(Yes/No) : <span style="color:red;">*</span></label><br>
+                     @*@<input type="text" id="nationality" style="background-color: white;" name="fname">*@
+                     @Html.TextBoxFor(x => x.ostudentRegister.status, new { @style = "background-color:white;" })
+                </div>
+
+                <div class="col-sm-3">
+                    <button onclick="test()">Save</button>
+                </div>
+     
+            </div>
+        </div>
+         
+            @* <div class="row" id="StudentDetailsGrid">
+                @Html.Partial("StudentDetailsGrid", Model);
+            </div> *@
+    }
+</body>
+</html>
+<style>
+    body {
+        background-image: linear-gradient(to right, #16222A 0%, #3A6073 51%, #16222A 100%);
+        margin: 10px;
+        padding: 50px 10px;
+        transition: 0.5s;
+        background-size: 200% auto;
+        display: block;
+    }
+        body:hover {
+            background-position: right center; /* change the direction of the change here */
+            text-decoration: none;
+        }
+    input {
+        background-color: whitesmoke;
+    }
+    label {
+        color: whitesmoke;
+    }
+</style>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+       // ShowStyleTesting();
+    });
+    function validateForm() {
+        let reg_id = $("#ostudentRegister").val(); // YYYY/MM/DD format
+        let dateObj = new Date(dateInput);
+        if (dateObj == "Invalid Date") {
+            msg += "Invalid Date\n";
+        }
+        var mobilenumber = $("#oStudent_MobileNumber").val();
+        if (mobilenumber != "") {
+            if (mobilenumber.length != 10) {
+                msg = "Mobile Number is not vaild\n";
+            }
+        }
+        else {
+            msg += "Please enter Mobile Number!\n";
+
+        }
+        var cgpa = $("#oStudent_CGPA").val();
+        if (cgpa != "") {
+            if (cgpa > 10) {
+                msg = "Your cgpa is invaild\n";
+            }
+        }
+        else {
+            msg += "Please Enter cgpa!\n";
+
+        }
+        var arrears = $("#oStudent_NoOfArrears").val();
+        if (arrears != "") {
+            if (arrears > 40) {
+                msg += "Please leave this college\n";
+            }
+        }
+        else {
+            msg += "Please Enter No. Of Arrears\n";
+        }
+        var firstname = $("#oStudent_FirstName").val();
+        if (firstname == "") {
+            msg += "Please Enter First Name\n";
+        }
+        var lastname = $("#oStudent_LastName").val();
+        if (lastname == "") {
+            msg += "Please Enter Last Name\n";
+        }
+        var emailid = $("#oStudent_EmailID").val();
+        if (emailid == "") {
+            msg += "Please Enter Email-Id\n";
+        }
+        var address = $("#oStudent_Address").val();
+        if (address == "") {
+            msg += "Please Enter Address\n";
+        }
+        var branch = $("#oStudent_Branch").val();
+        if (branch == "") {
+            msg += "Please Enter Branch\n";
+        }
+        var department = $("#oStudent_Department").val();
+        if (department == "") {
+            msg += "Please Enter Department\n";
+        }
+        if (msg != "") {
+            alert(msg);
+        }
+        else {
+            $("#studentform").submit();
+
+            // alert(lastname)
+            // alert(dateObj)
+            // alert(mobilenumber)
+            // alert(emailid)
+            // alert(address)
+            // alert(department)
+            // alert(branch)
+            // alert(cgpa)
+            // alert(arrears)
+            // alert(password)
+        }
+        document.getElementById("demo").innerHTML = text;
+        //var url = '../Home/SaveData';
+        //$.ajax({
+        //    url: url,
+        //    data:
+        //});
+    }
+    function EditValues(id) {
+        var url = "../Home/About";
+        $.ajax({
+            url: url,
+            type: "GET",
+            data: { Mode: "Edit", ID: id },
+            success: function () {
+            }
+        });
+        /*ShowStudentDetailsGrid();*/
+    }
+    function ShowStyleTesting() {
+        var url = "../Home/StyleTesting";
+        $.ajax({
+            url: url,
+            data: {},
+            success: function (data) {
+                $("#StyleTesting").html(data);
+            }
+        });
+    }
+
+    function test(){
+
+
+        $("#studentform").submit();  
+        @* var msg = "";
+        var firstname = $("#ostudentRegister_student_name").val();
+        if (firstname == "") {
+            msg = Please enter first name;
+        }
+        if(msg == ""){
+            $("#studentform").submit();
+        }
+        else{
+            alert(msg);
+        } *@
+       
+    }
+</script>
